@@ -11,6 +11,7 @@ public class Interface extends Application{
 	private Scene scene;
 	private Group root;
 	private Label[]memory=new Label[256];
+	private Rectangle pointer;
 	
 	@Override
 	public void start(Stage primaryStage){
@@ -29,15 +30,23 @@ public class Interface extends Application{
 		rect.setX(0);
 		rect.setY(0);
 		rect.setWidth(640);
-		rect.setHeight(160);
+		rect.setHeight(320);
+		
+		pointer=new Rectangle();
+		root.getChildren().add(pointer);
+		pointer.setX(0);
+		pointer.setY(0);
+		pointer.setWidth(40);
+		pointer.setHeight(20);
+		pointer.setFill(Color.DARKRED);
 		
 		for(int i=0;i<256;i++){
 			memory[i]=new Label("000");
 			root.getChildren().add(memory[i]);
-			memory[i].setLayoutX(20*(i%32)+2);
-			memory[i].setLayoutY(20*(i/32)+4);
-			memory[i].setFont(new Font("Courier New",8));
-			memory[i].setTextFill(Color.WHITE);
+			memory[i].setLayoutX(40*(i%16)+8);
+			memory[i].setLayoutY(20*(i/16)+3);
+			memory[i].setFont(new Font("Courier New",12));
+			memory[i].setTextFill(Color.LIGHTGRAY);
 		}
 		
 		stage.show();
