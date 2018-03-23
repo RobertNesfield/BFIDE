@@ -62,7 +62,7 @@ public class Interface extends Application{
 		code.setLayoutX(5);
 		code.setLayoutY(205);
 		code.setWrapText(true);
-		code.setFont(new Font("Courier New",8));
+		code.setFont(new Font("Courier New",10));
 		
 		output=new TextArea();
 		root.getChildren().add(output);
@@ -70,7 +70,7 @@ public class Interface extends Application{
 		output.setPrefHeight(440);
 		output.setLayoutX(485);
 		output.setLayoutY(205);
-		output.setFont(new Font("Courier New",8));
+		output.setFont(new Font("Courier New",10));
 		output.setEditable(false);
 		
 		input=new TextArea();
@@ -80,7 +80,7 @@ public class Interface extends Application{
 		input.setLayoutX(5);
 		input.setLayoutY(655);
 		input.setWrapText(true);
-		input.setFont(new Font("Courier New",8));
+		input.setFont(new Font("Courier New",10));
 		
 		runF=new Button("Run");
 		root.getChildren().add(runF);
@@ -183,7 +183,7 @@ public class Interface extends Application{
 							pointer.setY(-20);
 						}
 					}
-					if(!output.getText().replaceAll("\\p{C}","").equals(Interpreter.output().replaceAll("\\p{C}","")))output.setText(Interpreter.output());
+					if(!output.getText().equals(Interpreter.output()))try{output.appendText(Interpreter.output().substring(output.getText().length()));}catch(Exception e){output.setText(Interpreter.output());}
 				});
 				if(!fast){
 					Interpreter.step();

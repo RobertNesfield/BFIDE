@@ -1,0 +1,100 @@
+O = 111
+U = O
+U + 6
+H = O
+H - 7
+A = H
+A - 7
+, = 44
+s = 32
+n = 57
+X
+Y
+for x 0 10
+	X = x
+	for y 0 10
+		Y = y
+		for z 0 3
+			if X ! 9 then
+				out n - X
+			end
+			out n - Y
+			out s
+			out A + 1
+			out O
+			out U - 1 * 2
+			out O - 3
+			out H - 3
+			if X ! 9 or Y ! 8 then
+				out U - 2
+			end
+			out s
+			out O
+			out H - 2
+			out s
+			out A + 1
+			out H - 3 * 2
+			out O + 3
+			if z ! 1 then
+				out s
+				out O
+				out O - 1
+				out s
+				out U - 1
+				out H
+				out H - 3
+				out s
+				out U + 2
+				out A
+				out O - 3 * 2
+			else
+				out ,
+				out 10
+				out U - 1
+				out A
+				out H + 3
+				out H - 3
+				out s
+				out O
+				out O - 1
+				out H - 3
+				out s
+				out A + 3
+				out O
+				out U + 2
+				out O - 1
+				out ,
+				out 10
+				out O + 1
+				out A
+				out U - 2 * 2
+				out s
+				out H + 1
+				out U - 1
+				out s
+				out A
+				out O + 3
+				out O
+				out U
+				out O - 1
+				out A + 3
+				Y + 1
+				if Y = 10 then
+					Y = 0
+					X + 1
+				end
+			end
+			if z ! 2 then
+				out ,
+				out 10
+			else
+				out , + 2
+			end
+		end
+		if X ! 9 or Y ! 9 then
+			out 10 * 2
+		else
+			y + 1
+		end
+	end
+end

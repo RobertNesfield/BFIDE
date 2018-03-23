@@ -39,7 +39,7 @@ public class Interpreter{
 					if(pointer==-1)pointer=29999;
 					break;
 				case'.':
-					out+=(char)(bytes[pointer]&0xFF);
+					out+=(bytes[pointer]==9||bytes[pointer]==10)?(char)(bytes[pointer]&0xFF):String.valueOf((char)(bytes[pointer]&0xFF)).replaceAll("\\p{Cntrl}","");
 					break;
 				case',':
 					if(inp.length()==0)bytes[pointer]=0;
@@ -88,7 +88,7 @@ public class Interpreter{
 					if(pointer==-1)pointer=29999;
 					break;
 				case'.':
-					out+=(char)(bytes[pointer]&0xFF);
+					out+=(bytes[pointer]==9||bytes[pointer]==10)?(char)(bytes[pointer]&0xFF):String.valueOf((char)(bytes[pointer]&0xFF)).replaceAll("\\p{Cntrl}","");
 					break;
 				case',':
 					if(inp.length()==0)bytes[pointer]=0;
