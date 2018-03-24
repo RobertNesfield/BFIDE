@@ -56,7 +56,8 @@ public class PtBF {
 					}
 				}else if(!e[2].equals("*")){
 					try{
-						out+=e[1]+"[ "+e[1]+"- c+ d+ "+e[1]+"] d[ d- "+e[1]+"+ d] c"+e[2]+String.valueOf(Integer.parseInt(e[3]))+" c."+((e.length==4)?"":e[5])+" c[ c- c] ";
+						if(Integer.parseInt(e[3])<20)out+=e[1]+e[2]+e[3]+" "+e[1]+"."+((e.length==4)?"":e[5])+" "+e[1]+((e[2].equals("+"))?"-":"+")+e[3]+" ";
+						else out+=e[1]+"[ "+e[1]+"- c+ d+ "+e[1]+"] d[ d- "+e[1]+"+ d] c"+e[2]+e[3]+" c."+((e.length==4)?"":e[5])+" c[ c- c] ";
 					}catch(Exception n){
 						out+=e[1]+"[ "+e[1]+"- c+ d+ "+e[1]+"] d[ d- "+e[1]+"+ d] "+e[3]+"[ "+e[3]+"- d+ c"+e[2]+" "+e[3]+"] d[ d- "+e[3]+"+ d] c."+((e.length==4)?"":e[5])+" c[ c- c] ";
 					}
